@@ -18,10 +18,10 @@ about:
       href: https://github.com
     - icon: file-earmark-pdf
       text: Resumé
-      href: https://GITHUB_USERNAME.github.io/resume-example.pdf
+      href: https://Jaxsonmarsh.github.io/UpdatedResume2023.docx
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
+      href: mailto:jbm100@geneseo.edu
 
 ---
 
@@ -31,7 +31,7 @@ Jaxson Marsh is a student of Data Analytics and Economics at SUNY Geneseo.
 ## Education
 
 Finger Lakes Community College | Canandaigua, NY <br>
-A.S. in | Aug 2021 - May 2023 <br>
+A.S. in Healthcare Management| Aug 2021 - May 2023 <br>
 
 State University of New York at Geneseo | Geneseo, NY <br>
 B.S. in Accounting | Aug 2023 - Current <br>
