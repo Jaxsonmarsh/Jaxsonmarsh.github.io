@@ -1,7 +1,7 @@
 ---
 title: "Jaxson Marsh"
 about:
-  template: trestles  # jolla  trestles  solana  marquee  broadside
+  template: jolla  # jolla  trestles  solana  marquee  broadside
   image: img/jaxsonpic.jpg
   image-width: 15em
   image-shape: round # rectangle  round  rounded
