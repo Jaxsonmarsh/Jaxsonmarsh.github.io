@@ -47,7 +47,7 @@ theme_set(theme_ipsum()+
 
 # Introduction
 
-About this project :clap:
+About this project :sleeping:
 
 ```{r}
 sleephealth <- read.csv("C:/Users/Jaxso/Downloads/Sleep_health_and_lifestyle_dataset.csv")

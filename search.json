@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Jaxson Marsh",
     "section": "",
-    "text": "Jaxson Marsh is a student of Data Analytics and Economics at SUNY Geneseo."
+    "text": "Jaxson Marsh is a student currentley enrolled in Introduction to Data Analytics at SUNY Geneseo, whilst majoring in Accounting."
   },
   {
     "objectID": "index.html#education",
@@ -109,7 +109,7 @@
     "href": "project.html",
     "title": "DANL Project",
     "section": "",
-    "text": "About this project 👏\n\nsleephealth &lt;- read.csv(\"C:/Users/Jaxso/Downloads/Sleep_health_and_lifestyle_dataset.csv\")"
+    "text": "About this project 😴\n\nsleephealth &lt;- read.csv(\"C:/Users/Jaxso/Downloads/Sleep_health_and_lifestyle_dataset.csv\")"
   },
   {
     "objectID": "project.html#summary-statistics",
