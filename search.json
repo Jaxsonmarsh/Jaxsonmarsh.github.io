@@ -109,14 +109,14 @@
     "href": "project.html",
     "title": "DANL Project",
     "section": "",
-    "text": "About this project 👏\n\n1 + 1\n\n[1] 2"
+    "text": "About this project 👏\n\nsleephealth &lt;- read.csv(\"C:/Users/Jaxso/Downloads/Sleep_health_and_lifestyle_dataset.csv\")"
   },
   {
     "objectID": "project.html#summary-statistics",
     "href": "project.html#summary-statistics",
     "title": "DANL Project",
     "section": "2.1 Summary Statistics",
-    "text": "2.1 Summary Statistics\n\nmpg &lt;- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(mpg) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nmpg\n\n\nNumber of rows\n234\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nmanufacturer\n1\n4\n10\n0\n15\n0\n\n\nmodel\n1\n2\n22\n0\n38\n0\n\n\ntrans\n1\n8\n10\n0\n10\n0\n\n\ndrv\n1\n1\n1\n0\n3\n0\n\n\nfl\n1\n1\n1\n0\n5\n0\n\n\nclass\n1\n3\n10\n0\n7\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ndispl\n1\n3.47\n1.29\n1.6\n2.4\n3.3\n4.6\n7\n▇▆▆▃▁\n\n\nyear\n1\n2003.50\n4.51\n1999.0\n1999.0\n2003.5\n2008.0\n2008\n▇▁▁▁▇\n\n\ncyl\n1\n5.89\n1.61\n4.0\n4.0\n6.0\n8.0\n8\n▇▁▇▁▇\n\n\ncty\n1\n16.86\n4.26\n9.0\n14.0\n17.0\n19.0\n35\n▆▇▃▁▁\n\n\nhwy\n1\n23.44\n5.95\n12.0\n18.0\n24.0\n27.0\n44\n▅▅▇▁▁"
+    "text": "2.1 Summary Statistics\n\nmpg &lt;- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(sleephealth) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nsleephealth\n\n\nNumber of rows\n374\n\n\nNumber of columns\n13\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n5\n\n\nnumeric\n8\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nGender\n1\n4\n6\n0\n2\n0\n\n\nOccupation\n1\n5\n20\n0\n11\n0\n\n\nBMI.Category\n1\n5\n13\n0\n4\n0\n\n\nBlood.Pressure\n1\n6\n6\n0\n25\n0\n\n\nSleep.Disorder\n1\n4\n11\n0\n3\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nPerson.ID\n1\n187.50\n108.11\n1.0\n94.25\n187.5\n280.75\n374.0\n▇▇▇▇▇\n\n\nAge\n1\n42.18\n8.67\n27.0\n35.25\n43.0\n50.00\n59.0\n▆▆▇▃▅\n\n\nSleep.Duration\n1\n7.13\n0.80\n5.8\n6.40\n7.2\n7.80\n8.5\n▇▆▇▇▆\n\n\nQuality.of.Sleep\n1\n7.31\n1.20\n4.0\n6.00\n7.0\n8.00\n9.0\n▁▇▆▇▅\n\n\nPhysical.Activity.Level\n1\n59.17\n20.83\n30.0\n45.00\n60.0\n75.00\n90.0\n▇▇▇▇▇\n\n\nStress.Level\n1\n5.39\n1.77\n3.0\n4.00\n5.0\n7.00\n8.0\n▇▃▂▃▃\n\n\nHeart.Rate\n1\n70.17\n4.14\n65.0\n68.00\n70.0\n72.00\n86.0\n▇▇▂▁▁\n\n\nDaily.Steps\n1\n6816.84\n1617.92\n3000.0\n5600.00\n7000.0\n8000.00\n10000.0\n▁▅▇▆▂"
   },
   {
     "objectID": "project.html#mpg-and-a-type-of-cars",
