@@ -73,10 +73,9 @@ rmarkdown::paged_table(mpg)
 
 
 ```{r}
-skim(mpg) %>% 
+skim(sleephealth) %>% 
   select(-n_missing)
 ```
-
 
 ## MPG and a Type of Cars
 The following boxplot shows how the distribution of highway MPG (`hwy`) varies by a type of cars (`class`) :blue_car: :truck: :minibus:.
