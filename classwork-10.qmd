@@ -2,14 +2,16 @@
 title: "Classwork 10"
 editor: visual
 author: Jaxson Marsh
-affiliations:
-      - name: SUNY Geneseo
+affiliations: SUNY Geneseo
 ---
 
 ```{r}
 #| include: false
 library(tidyverse)
 library(skimr)
+library(dplyr)
+library(ggthemes)
+library(hrbrthemes)
 ```
 
 ### Question 1 - Billboard Charts
@@ -19,6 +21,12 @@ The following data is for Question 1:
 ```{r}
 billboard <- read_csv('https://bcdanl.github.io/data/billboard.csv')
 ```
+```{r}
+#| results: asis
+#| echo: false
+rmarkdown::paged_table(billboard) 
+```
+
 
 ## Q1a
 
@@ -36,8 +44,49 @@ Describe how the distribution of rating varies across week 1, week 2, and week 3
 - Do not double-count an artist’s tracks if they appear in multiple weeks.
 
 ```{r}
+artist_track_counts <- billboard %>%
+  group_by(artist) %>%
+  summarise(unique_tracks = n_distinct(track))
 
+top_artists <- artist_track_counts %>%
+  filter(unique_tracks == max(unique_tracks))
 ```
+
+
+
+
+### Question 2 - Average Personal Income in NY Counties
+
+The following data is for Question 2:
+
+```{r}
+ny_pincp <- read_csv('https://bcdanl.github.io/data/NY_pinc_wide.csv')
+```
+
+```{r}
+#| results: asis
+#| echo: false
+rmarkdown::paged_table(ny_pincp) 
+```
+
+
+## Q2a
+
+Make ny_pincp longer.
+
+```{r}
+q2a <- ny_pincp %>% 
+  pivot_longer(cols = pincp1969:pincp2019,
+               names_to = "year",
+               values_to = "pincp")
+```
+
+
+## Q2b
+
+
+
+
 
 
 

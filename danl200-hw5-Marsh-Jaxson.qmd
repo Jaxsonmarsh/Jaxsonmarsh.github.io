@@ -2,3 +2,20 @@
 title: "danl200-hw5-Marsh-Jaxson.qmd"
 editor: visual
 ---
+# Q1a
+# Provide a link for your GihtHub repository,
+
+https://github.com/Jaxsonmarsh/Jaxsonmarsh.github.io
+
+# Q1b
+# Make sure that your GitHub repository, named YOUR_GITHUB_USERNAME.github.io, is set to public.
+# 
+# Update your website at https://YOUR_GITHUB_USERNAME.github.io/index.html to:
+# 
+# Include links to (1) your LinkedIn page, (2) GitHub page (https://github.com/YOUR_GITHUB_USERNAME), and (3) a PDF file of your Rèsume (https://YOUR_GITHUB_USERNAME.github.io/YOUR_RESUME.pdf).
+# Offer a description of yourself, detailing your education background and professional experience.
+# Display your own profile picture with your face, not the one shown below.
+
+Work on resume
+
+---
