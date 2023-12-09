@@ -12,13 +12,13 @@ about:
       href: https://linkedin.com/in/jaxson-marsh-5b5b902a2/
     - icon: instagram
       text: Instagram
-      href: https://instagram.com
+      href: https://instagram.com/jaxson.marsh
     - icon: github
       text: GitHub
       href: https://github.com/Jaxsonmarsh
     - icon: file-earmark-pdf
       text: Resumé
-      href: https://Jaxsonmarsh.github.io/UpdatedResume2023.docx%20(1).pdf
+      href: https://github.com/UpdatedResume2023.pdf
     - icon: mailbox
       text: Email
       href: mailto:jbm100@geneseo.edu
@@ -42,6 +42,6 @@ Uber Lawns & Landscape | Foreman | Aug 2021 - Aug 2023
 
 Wegmans | Prepared Foods Handler | Mar 2021 - Dec 2021
 
-NYS Soccer Referee Association | Soccer Referee | July 2107 - Aug 2019
+NYS Soccer Referee Association | Soccer Referee | July 2017 - Aug 2019
 
 
