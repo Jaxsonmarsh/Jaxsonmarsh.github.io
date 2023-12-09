@@ -4,7 +4,7 @@
     "href": "blog-listing.html",
     "title": "Interesting Topical Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nNFL in 2022\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nByeong-Hak Choe\n\n\n9 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspection\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNFL in 2022\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -102,7 +102,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is the first post in a Quarto blog. Welcome!"
   },
   {
     "objectID": "project.html",
@@ -242,13 +242,83 @@
     "href": "posts/NFL in 2022/NFL in 2022.html",
     "title": "NFL in 2022",
     "section": "",
-    "text": "Let’s analyze the NFL2022 data :football: :\nNFL2022_stuffs &lt;- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')"
+    "text": "Let’s analyze the NFL2022 data:\nNFL2022_stuffs &lt;- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')"
   },
   {
     "objectID": "posts/NFL in 2022/NFL in 2022.html#variable-description-for-nfl2022_stuffs-data.frame",
     "href": "posts/NFL in 2022/NFL in 2022.html#variable-description-for-nfl2022_stuffs-data.frame",
     "title": "NFL in 2022",
     "section": "Variable Description for NFL2022_stuffs data.frame",
-    "text": "Variable Description for NFL2022_stuffs data.frame\n-play_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\n-game_id: Ten digit identifier for NFL game.\n-drive: Numeric drive number in the game.\n-week: Season week.\n-posteam: String abbreviation for the team with possession.\n-qtr: Quarter of the game (5 is overtime).\n-half_seconds_remaining: Numeric seconds remaining in the half.\n-down: The down for the given play. Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). If you make 10 yards then you get another set of four downs.\n-pass: Binary indicator if the play was a pass play.\n-wp: Estimated winning probability for the posteam given the current situation at the start of the given play."
+    "text": "Variable Description for NFL2022_stuffs data.frame\n-play_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play\n-game_id: Ten digit identifier for NFL game.\n-drive: Numeric drive number in the game.\n-week: Season week.\n-posteam: String abbreviation for the team with possession.\n-qtr: Quarter of the game (5 is overtime).\n-half_seconds_remaining: Numeric seconds remaining in the half.\n-down: The down for the given play. Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). If you make 10 yards then you get another set of four downs.\n-pass: Binary indicator if the play was a pass play.\n-wp: Estimated winning probability for the posteam given the current situation at the start of the given play.\n🏈"
+  },
+  {
+    "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html",
+    "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html",
+    "title": "NYC Restaurant Inspection",
+    "section": "",
+    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')"
+  },
+  {
+    "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#variables-for-nycinspect-data.frame",
+    "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#variables-for-nycinspect-data.frame",
+    "title": "NYC Restaurant Inspection",
+    "section": "Variables for nycinspect data.frame",
+    "text": "Variables for nycinspect data.frame\nThe following are the variables present in the nycinspect data.frame.\n-‘CAMIS’ -‘DBA’ -‘BORO’ -‘STREET’ -‘CUISINE DESCRIPTION’ -‘INSPECTION DATE’ -‘ACTION’ -‘VIOLATION CODE’ -‘VIOLATION DESCRIPTION’ -‘CRITICAL FLAG’ -‘SCORE’ -‘GRADE’"
+  },
+  {
+    "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-1",
+    "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-1",
+    "title": "NYC Restaurant Inspection",
+    "section": "Figure 1",
+    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘Grade’."
+  },
+  {
+    "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-2",
+    "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-2",
+    "title": "NYC Restaurant Inspection",
+    "section": "Figure 2",
+    "text": "Figure 2\n–"
+  },
+  {
+    "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-3",
+    "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-3",
+    "title": "NYC Restaurant Inspection",
+    "section": "Figure 3",
+    "text": "Figure 3\n–"
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html",
+    "href": "posts/Spotify/Spotify.html",
+    "title": "Spotify",
+    "section": "",
+    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')"
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html#variables-for-nycinspect-data.frame",
+    "href": "posts/Spotify/Spotify.html#variables-for-nycinspect-data.frame",
+    "title": "Spotify",
+    "section": "Variables for nycinspect data.frame",
+    "text": "Variables for nycinspect data.frame\nThe following are the variables present in the nycinspect data.frame.\n-‘CAMIS’ -‘DBA’ -‘BORO’ -‘STREET’ -‘CUISINE DESCRIPTION’ -‘INSPECTION DATE’ -‘ACTION’ -‘VIOLATION CODE’ -‘VIOLATION DESCRIPTION’ -‘CRITICAL FLAG’ -‘SCORE’ -‘GRADE’"
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html#figure-1",
+    "href": "posts/Spotify/Spotify.html#figure-1",
+    "title": "Spotify",
+    "section": "Figure 1",
+    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘Grade’."
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html#figure-2",
+    "href": "posts/Spotify/Spotify.html#figure-2",
+    "title": "Spotify",
+    "section": "Figure 2",
+    "text": "Figure 2\n–"
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html#figure-3",
+    "href": "posts/Spotify/Spotify.html#figure-3",
+    "title": "Spotify",
+    "section": "Figure 3",
+    "text": "Figure 3\n–"
   }
 ]

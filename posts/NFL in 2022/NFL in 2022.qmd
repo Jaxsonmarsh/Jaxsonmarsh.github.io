@@ -8,8 +8,10 @@ image: "NFL.jpg"
 execute: 
   warning: false
   message: false
+  code-tools: true
   
 toc: true
+from: markdown+emoji
 ---
 ```{r}
 #| include: false
@@ -33,7 +35,7 @@ theme_set(theme_ipsum()+
           )
 ```
 
-Let's analyze the `NFL2022` data :football: :
+Let's analyze the `NFL2022` data:
 
 ```{r}
 NFL2022_stuffs <- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
@@ -71,6 +73,7 @@ If you make 10 yards then you get another set of four downs.
 
 -wp: Estimated winning probability for the posteam given the current situation at the start of the given play.
 
+:football:
 
 # Question 2. NFL in 2022 
 

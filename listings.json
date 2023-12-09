@@ -2,10 +2,11 @@
   {
     "listing": "/blog-listing.html",
     "items": [
+      "/posts/welcome/index.html",
+      "/posts/Spotify/Spotify.html",
+      "/posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html",
       "/posts/NFL in 2022/NFL in 2022.html",
-      "/posts/beer-markets/beer-markets.html",
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/Beer Markets/beer-markets.html"
     ]
   }
 ]

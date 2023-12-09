@@ -1,0 +1,116 @@
+---
+title: "Beer Markets"
+author: "Jaxson Marsh"
+date: "2023-12-09"
+categories: [beer-markets, code, data-analysis]
+image: "beer.jpg"
+
+execute: 
+  warning: false
+  message: false
+  code-tools: true
+  
+toc: true
+from: markdown+emoji
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(10,0,0,0)),
+                axis.title.y  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(0,10,0,0))
+                )
+          )
+```
+
+Let's analyze the `nycinspect` data:
+
+```{r}
+nycinspect <- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')
+```
+
+
+```{r}
+#| results: asis
+rmarkdown::paged_table(nycinspect) 
+```
+
+
+
+## Variables for `nycinspect` data.frame
+
+The following are the variables present in the `nycinspect` data.frame.
+
+-'CAMIS'
+-'DBA'
+-'BORO'
+-'STREET'
+-'CUISINE DESCRIPTION'
+-'INSPECTION DATE'
+-'ACTION'
+-'VIOLATION CODE'
+-'VIOLATION DESCRIPTION'
+-'CRITICAL FLAG'
+-'SCORE'
+-'GRADE'
+
+## Figure 1
+
+Provide both (1) ggplot code and (2) a simple comment to describe how 'ACTION' varies by 'SCORE' and 'Grade'.
+
+```{r}
+
+```
+
+
+## Figure 2
+
+--
+
+```{r}
+
+```
+
+
+## Figure 3
+
+--
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
