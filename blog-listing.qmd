@@ -1,5 +1,5 @@
 ---
-title: "Interesting Topic Analysis<br><br>"
+title: "Interesting Topical Analysis<br><br>"
 listing:
   contents: posts
   type: default
