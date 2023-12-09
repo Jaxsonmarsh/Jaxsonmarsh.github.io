@@ -150,6 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#billboard-charts" id="toc-billboard-charts" class="nav-link active" data-scroll-target="#billboard-charts"><span class="header-section-number">1</span> Billboard Charts</a></li>
   <li><a href="#average-personal-income-in-ny-counties" id="toc-average-personal-income-in-ny-counties" class="nav-link" data-scroll-target="#average-personal-income-in-ny-counties"><span class="header-section-number">2</span> Average Personal Income in NY Counties</a></li>
+  <li><a href="#covid-19-cases" id="toc-covid-19-cases" class="nav-link" data-scroll-target="#covid-19-cases"><span class="header-section-number">3</span> COVID-19 Cases</a></li>
   </ul>
 </nav>
     </div>
@@ -193,12 +194,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 </div>
 </div>
-<section id="a" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="a"><span class="header-section-number">1.0.1</span> 1a</h3>
+<section id="section" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="section"><span class="header-section-number">1.0.1</span> .</h3>
 <p>Describe how the distribution of rating varies across week 1, week 2, and week 3 using the faceted histogram.</p>
 </section>
-<section id="b" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="b"><span class="header-section-number">1.0.2</span> 1b</h3>
+<section id="section-1" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.0.2</span> .</h3>
 <ul>
 <li><p>Which artist(s) have the most number of tracks in billboard data.frame?</p></li>
 <li><p>Do not double-count an artist’s tracks if they appear in multiple weeks.</p></li>
@@ -227,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 </div>
 </div>
-<section id="a-1" class="level3" data-number="2.0.1">
-<h3 data-number="2.0.1" class="anchored" data-anchor-id="a-1"><span class="header-section-number">2.0.1</span> 2a</h3>
+<section id="section-2" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="section-2"><span class="header-section-number">2.0.1</span> .</h3>
 <p>Make ny_pincp longer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>q2a <span class="ot">&lt;-</span> ny_pincp <span class="sc">%&gt;%</span> </span>
@@ -237,8 +238,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"pincp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="b-1" class="level3" data-number="2.0.2">
-<h3 data-number="2.0.2" class="anchored" data-anchor-id="b-1"><span class="header-section-number">2.0.2</span> 2b</h3>
+<section id="section-3" class="level3" data-number="2.0.2">
+<h3 data-number="2.0.2" class="anchored" data-anchor-id="section-3"><span class="header-section-number">2.0.2</span> .</h3>
+<p>Provide both (1) ggplot code and (2) a simple comment to describe how overall the yearly trend of NY counties’ average personal incomes are.</p>
+</section>
+</section>
+<section id="covid-19-cases" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> COVID-19 Cases</h1>
+<p>The following data is for Question 3:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>covid <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://bcdanl.github.io/data/covid19_cases.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="section-4" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="section-4"><span class="header-section-number">3.0.1</span> .</h3>
+<p>-Keep only the following three variables, date, countriesAndTerritories, and cases.</p>
+<p>-Then make a wide-form data.frame of covid whose variable names are from countriesAndTerritories and values are from cases.</p>
+<p>-Then drop the variable date.</p>
+</section>
+<section id="section-5" class="level3" data-number="3.0.2">
+<h3 data-number="3.0.2" class="anchored" data-anchor-id="section-5"><span class="header-section-number">3.0.2</span> .</h3>
+<p>-Use the wide-form data.frame of covid to find the top 10 countries in terms of the correlation between their cases and the USA case. -Use cor(data.frame), which returns a matrix. -Then convert it to data.frame using as.data.frame(matrix)</p>
 
 
 </section>
