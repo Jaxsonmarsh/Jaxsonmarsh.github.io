@@ -4,7 +4,7 @@
     "href": "blog-listing.html",
     "title": "Interesting Topical Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspection\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNFL in 2022\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspection\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nNFL in 2022\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nJaxson Marsh\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -256,7 +256,7 @@
     "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html",
     "title": "NYC Restaurant Inspection",
     "section": "",
-    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')"
+    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')\n🍔 🍕"
   },
   {
     "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#variables-for-nycinspect-data.frame",
@@ -270,21 +270,21 @@
     "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-1",
     "title": "NYC Restaurant Inspection",
     "section": "Figure 1",
-    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘Grade’."
+    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘GRADE’.\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\nggplot(nycinspect, aes(x = SCORE, fill = ACTION)) +\n  geom_bar(position = 'stack') +\n  facet_wrap(~ GRADE, scales = 'free') +\n  labs(title = \"ACTION Variation by SCORE and GRADE\",\n       x = \"SCORE\",\n       y = \"Count\",\n       fill = \"ACTION\") +\n  theme_minimal()\n\n\n\n\nThis ggplot code generates a bar plot to visualize how the distribution of ‘ACTION’ varies with ‘SCORE’ across different ‘Grade’ categories. Each facet represents a different ‘Grade’, allowing us to observe patterns in ‘ACTION’ based on the inspection scores (‘SCORE’) and corresponding grades."
   },
   {
     "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-2",
     "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-2",
     "title": "NYC Restaurant Inspection",
     "section": "Figure 2",
-    "text": "Figure 2\n–"
+    "text": "Figure 2\nCreate both (1) a scatter plot to visualize the relationship between the ‘BORO and the ’SCORE’(2) a simple comment based on the findings.\n\nggplot(nycinspect, aes(x = BORO, y = SCORE)) +\n  geom_point() +\n  labs(title = \"Scatter Plot of Score by Boro\",\n       x = \"Boro\",\n       y = \"Score\") +\n  theme_minimal()\n\n\n\n\nThe scatterplot presented above shows us the relationship between each specific NYC ‘BORO’ and the specific ‘SCORE’ that each one recieved. Some important findings are that the ‘BORO’ of Manhattan recieved some of the max scores, whilst Staten Island recieved lower scores in comarison to others."
   },
   {
     "objectID": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-3",
     "href": "posts/NYC_Restaurant_Inspection/NYC_Restaurant_Inspection.html#figure-3",
     "title": "NYC Restaurant Inspection",
     "section": "Figure 3",
-    "text": "Figure 3\n–"
+    "text": "Figure 3\nProvide both (1) a bar chart and (2) a simple comment based on the relationship between the day of the week and the average inspection ‘SCORE’. 📅\n\nnycinspect &lt;- data.frame(\n  SCORE = rnorm(500, mean = 80, sd = 10),\n  DAY_OF_WEEK = sample(c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"), 500, replace = TRUE)\n)\n\nggplot(nycinspect, aes(x = DAY_OF_WEEK, y = SCORE, fill = DAY_OF_WEEK)) +\n  geom_bar(stat = \"summary\", fun = \"mean\", position = \"dodge\") +\n  labs(title = \"Average Inspection Score by Day of the Week\",\n       x = \"Day of the Week\",\n       y = \"Average Score\",\n       fill = \"Day of the Week\") +\n  theme_minimal()\n\n\n\n\nThis bar plot visualizes the average inspection scores for each day of the week. Each bar represents the average score on a specific day, and the bars are color-coded to distinguish between different days of the week. This plot allows us to quickly compare the average inspection scores across different weekdays, providing insights into potential variations in restaurant performance throughout the week."
   },
   {
     "objectID": "posts/Spotify/Spotify.html",
@@ -318,6 +318,41 @@
     "objectID": "posts/Spotify/Spotify.html#figure-3",
     "href": "posts/Spotify/Spotify.html#figure-3",
     "title": "Spotify",
+    "section": "Figure 3",
+    "text": "Figure 3\n–"
+  },
+  {
+    "objectID": "posts/Beer Markets/beer-markets.html",
+    "href": "posts/Beer Markets/beer-markets.html",
+    "title": "Beer Markets",
+    "section": "",
+    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')"
+  },
+  {
+    "objectID": "posts/Beer Markets/beer-markets.html#variables-for-nycinspect-data.frame",
+    "href": "posts/Beer Markets/beer-markets.html#variables-for-nycinspect-data.frame",
+    "title": "Beer Markets",
+    "section": "Variables for nycinspect data.frame",
+    "text": "Variables for nycinspect data.frame\nThe following are the variables present in the nycinspect data.frame.\n-‘CAMIS’ -‘DBA’ -‘BORO’ -‘STREET’ -‘CUISINE DESCRIPTION’ -‘INSPECTION DATE’ -‘ACTION’ -‘VIOLATION CODE’ -‘VIOLATION DESCRIPTION’ -‘CRITICAL FLAG’ -‘SCORE’ -‘GRADE’"
+  },
+  {
+    "objectID": "posts/Beer Markets/beer-markets.html#figure-1",
+    "href": "posts/Beer Markets/beer-markets.html#figure-1",
+    "title": "Beer Markets",
+    "section": "Figure 1",
+    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘Grade’."
+  },
+  {
+    "objectID": "posts/Beer Markets/beer-markets.html#figure-2",
+    "href": "posts/Beer Markets/beer-markets.html#figure-2",
+    "title": "Beer Markets",
+    "section": "Figure 2",
+    "text": "Figure 2\n–"
+  },
+  {
+    "objectID": "posts/Beer Markets/beer-markets.html#figure-3",
+    "href": "posts/Beer Markets/beer-markets.html#figure-3",
+    "title": "Beer Markets",
     "section": "Figure 3",
     "text": "Figure 3\n–"
   }

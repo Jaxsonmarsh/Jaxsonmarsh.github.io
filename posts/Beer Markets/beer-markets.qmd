@@ -35,36 +35,48 @@ theme_set(theme_ipsum()+
           )
 ```
 
-Let's analyze the `nycinspect` data:
+Let's analyze the `beer_markets` data:
 
 ```{r}
-nycinspect <- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')
+beer_markets <- read_csv('https://bcdanl.github.io/data/beer_markets.csv')
 ```
 
 
 ```{r}
 #| results: asis
-rmarkdown::paged_table(nycinspect) 
+rmarkdown::paged_table(beer_markets) 
 ```
 
 
 
-## Variables for `nycinspect` data.frame
+## Variables for `beer_markets` data.frame
 
-The following are the variables present in the `nycinspect` data.frame.
+The following are the variables present in the `beer_markets` data.frame.
 
--'CAMIS'
--'DBA'
--'BORO'
--'STREET'
--'CUISINE DESCRIPTION'
--'INSPECTION DATE'
--'ACTION'
--'VIOLATION CODE'
--'VIOLATION DESCRIPTION'
--'CRITICAL FLAG'
--'SCORE'
--'GRADE'
+-'hh'
+-'_purchase_desc'
+-'quantity'
+-'brand'
+-'dollar_spent'
+-'beer_floz'
+-'price_per_floz'
+-'container'
+-'promo'
+-'market'
+-'buyertype'
+-'income'
+-'childrenUnder6'
+-'children6to17'
+-'age'
+-'employment
+-'degree'
+-'cow'
+-'race'
+-'microwave'
+-'dishwasher'
+-'tvcable'
+-'singlefamilyhome'
+-'npeople'
 
 ## Figure 1
 

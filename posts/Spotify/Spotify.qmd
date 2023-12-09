@@ -38,40 +38,44 @@ theme_set(theme_ipsum()+
 Let's analyze the `nycinspect` data:
 
 ```{r}
-nycinspect <- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')
+spotify <- read_csv('https://bcdanl.github.io/data/spotify_all.csv')
 ```
 
 
 ```{r}
 #| results: asis
-rmarkdown::paged_table(nycinspect) 
+rmarkdown::paged_table(spotify) 
 ```
 
 
 
-## Variables for `nycinspect` data.frame
+## Variables for `spotify` data.frame
 
-The following are the variables present in the `nycinspect` data.frame.
+The following are the variables present in the `spotify` data.frame.
 
--'CAMIS'
--'DBA'
--'BORO'
--'STREET'
--'CUISINE DESCRIPTION'
--'INSPECTION DATE'
--'ACTION'
--'VIOLATION CODE'
--'VIOLATION DESCRIPTION'
--'CRITICAL FLAG'
--'SCORE'
--'GRADE'
+-'pid'
+-'playlist_name'
+-'pos'
+-'artist_name'
+-'track_name'
+-'duration_ms'
+-'album_name'
+
 
 ## Figure 1
 
-Provide both (1) ggplot code and (2) a simple comment to describe how 'ACTION' varies by 'SCORE' and 'Grade'.
+Provide both (1) ggplot code and (2) a simple comment to describe how 'playlist_name' varies by 'duration_ms'.
 
 ```{r}
+library(ggplot2)
 
+ggplot(spotify, aes(x = playlist_name, y = duration_ms, fill = playlist_name)) +
+  geom_bar(stat = "identity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "Playlist Duration Variation",
+       x = "Playlist Name",
+       y = "Duration (ms)",
+       fill = "Playlist Name") 
 ```
 
 
