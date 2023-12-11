@@ -5,7 +5,14 @@ date: "2023-12-09"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is the first post in Jaxson Marsh's Quarto blog. Welcome!
 
-![](thumbnail.jpg)
+In this web-section you can find intersting blogs on:
+
+- Spotify
+- NFL in 2022
+- NYC Restaurant Inspection
+- Beer Markets
+
+![](blog.webp)
 

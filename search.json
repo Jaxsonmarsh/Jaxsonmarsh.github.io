@@ -102,7 +102,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!"
+    "text": "This is the first post in Jaxson Marsh’s Quarto blog. Welcome!\nIn this web-section you can find intersting blogs on:\n\nSpotify\nNFL in 2022\nNYC Restaurant Inspections\nBeer Markets"
   },
   {
     "objectID": "project.html",
@@ -291,7 +291,7 @@
     "href": "posts/Spotify/Spotify.html",
     "title": "Spotify",
     "section": "",
-    "text": "Let’s analyze the nycinspect data:\nnycinspect &lt;- read_csv('https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv')"
+    "text": "Let’s analyze the spotify data:\nspotify &lt;- read_csv('https://bcdanl.github.io/data/spotify_all.csv')\n🎹"
   },
   {
     "objectID": "posts/Spotify/Spotify.html#variables-for-nycinspect-data.frame",
@@ -305,21 +305,21 @@
     "href": "posts/Spotify/Spotify.html#figure-1",
     "title": "Spotify",
     "section": "Figure 1",
-    "text": "Figure 1\nProvide both (1) ggplot code and (2) a simple comment to describe how ‘ACTION’ varies by ‘SCORE’ and ‘Grade’."
+    "text": "Figure 1\nProvide a ggplot barchart of the top 10 spotify artists.\n\ntop_artists &lt;- spotify %&gt;% \n  group_by(artist_name) %&gt;%\n  summarise(total_playlists = n_distinct(pid)) %&gt;%\n  top_n(10, total_playlists)\n\nggplot(top_artists, aes(x = reorder(artist_name, -total_playlists), y = total_playlists)) +\n  geom_bar(stat = \"identity\", fill = \"coral\") +\n  labs(title = \"Top 10 Artists in Playlists\",\n       x = \"Artist Name\",\n       y = \"Number of Playlists\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
   },
   {
     "objectID": "posts/Spotify/Spotify.html#figure-2",
     "href": "posts/Spotify/Spotify.html#figure-2",
     "title": "Spotify",
     "section": "Figure 2",
-    "text": "Figure 2\n–"
+    "text": "Figure 2\nCreate both (1) a ggplot and (2) a simple comment to describe the distribution of ‘pos’ in playlists 🎸\n\nlibrary(ggplot2)\n\nggplot(spotify, aes(x = pos)) +\n  geom_histogram(binwidth = 1, fill = \"skyblue\", color = \"black\") +\n  labs(title = \"Distribution of Position in Playlists\",\n       x = \"Position\",\n       y = \"Frequency\") +\n  theme_minimal()\n\n\n\n\nThe above figure shows us that the ones postion increases with a decrease in frequency, and vice versa, on spotify."
   },
   {
     "objectID": "posts/Spotify/Spotify.html#figure-3",
     "href": "posts/Spotify/Spotify.html#figure-3",
     "title": "Spotify",
     "section": "Figure 3",
-    "text": "Figure 3\n–"
+    "text": "Figure 3\nProvide both (1) a scatter plot (2) that shows the relationship between the ‘pos’ and the ‘duration_ms’ of the track 🎧\n\nlibrary(ggplot2)\n\nset.seed(123)\nrandom_subset &lt;- spotify[sample(nrow(spotify), 500), ]\n\nggplot(random_subset, aes(x = pos, y = duration_ms)) +\n  geom_point(color = \"orange\", alpha = 0.7) +\n  labs(title = \"Scatter Plot of Position vs. Track Duration\",\n       x = \"Position in Playlist\",\n       y = \"Duration (ms)\") +\n  theme_minimal()\n\n\n\n\nIn this example, I created a ggplot function to create a scatter plot, mapping the x-axis to the position in the playlist (pos) and the y-axis to the duration of the track (duration_ms). By using a random subset of 500 points for better visualization, it was found that most songs fall along a similar duration regardless of their position in the playlist."
   },
   {
     "objectID": "posts/Beer Markets/beer-markets.html",
@@ -362,5 +362,12 @@
     "title": "Beer Markets",
     "section": "Variables for beer_markets data.frame",
     "text": "Variables for beer_markets data.frame\nThe following are the variables present in the beer_markets data.frame.\n-‘hh’ -’_purchase_desc’ -‘quantity’ -‘brand’ -‘dollar_spent’ -‘beer_floz’ -‘price_per_floz’ -‘container’ -‘promo’ -‘market’ -‘buyertype’ -‘income’ -‘childrenUnder6’ -‘children6to17’ -‘age’ -‘employment -’degree’ -‘cow’ -‘race’ -‘microwave’ -‘dishwasher’ -‘tvcable’ -‘singlefamilyhome’ -‘npeople’"
+  },
+  {
+    "objectID": "posts/Spotify/Spotify.html#variables-for-spotify-data.frame",
+    "href": "posts/Spotify/Spotify.html#variables-for-spotify-data.frame",
+    "title": "Spotify",
+    "section": "Variables for spotify data.frame",
+    "text": "Variables for spotify data.frame\nThe following are the variables present in the spotify data.frame.\n-‘pid’ -‘playlist_name’ -‘pos’ -‘artist_name’ -‘track_name’ -‘duration_ms’ -‘album_name’"
   }
 ]
