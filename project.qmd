@@ -5,7 +5,6 @@ author:
   - Jaxson Marsh
   - Edward Eforo
   - Angelina Batista
-  - Daniel Noone
   - Elizabeth Dutan
 
 toc: true
@@ -56,7 +55,7 @@ sleephealth <- read.csv("C:/Users/Jaxso/Downloads/Sleep_health_and_lifestyle_dat
 
 # Data
 
-The data.frame `sleephealth` contains a subset of the fuel economy data that the EPA makes available on [https://kaggle.com/](https://fueleconomy.gov/). It comprises 400 rows and 13 columns, covering a wide range of variables related to sleep and daily habits. It includes details such as gender, age, occupation, sleep duration, quality of sleep, physical activity level, stress levels, BMI category, blood pressure, heart rate, daily steps, and the presence or absence of sleep disorders. :bed:
+The data.frame `sleephealth` contains a subset of the fuel economy data that the EPA makes available on [https://kaggle.com/](https://fueleconomy.gov/). It comprises 400 rows and 13 columns, covering a wide range of variables related to sleep and daily habits. It includes variables such as gender, age, occupation, sleep duration, quality of sleep, physical activity level, stress levels, BMI category, blood pressure, heart rate, daily steps, and the presence or absence of sleep disorders. :bed:
 
 
 ## Summary Statistics
@@ -78,7 +77,7 @@ skim(sleephealth) %>%
 ```
 
 ## Sleep Duration by Ocupation
-The following boxplot shows the mean sleep duration (`Sleep.Duration`) varies by occupation (`Occupation`) :sleeping: :bed: .
+The following boxplot shows how the mean sleep duration (`Sleep.Duration`) varies by occupation (`Occupation`) :sleeping: :bed: .
 
 
 ```{r}
@@ -101,16 +100,25 @@ ggplot( data = mean_sleep_job, mapping = aes(x = Occupation, y = sleep_mean)) +
 
 ```
 
+The bar graph represents the mean sleep duration amongst all the presented occupations in the 'sleephealth' dataset. After putting the data into a ggplot figure, it was found that engineer's, on average, have the highest mean sleep duration at about 8 hours per night, and sales representative's had the lowest mean sleep duration at just under 6 hours a night.
 
 
+## Effect of Physical Activity and Sleep Duration on Stress
 
-## .
-
--
+This ggplot shows the effect of someone's sleep duration ('Sleep.Duration') and level of physical activity ('Physical.Activity.Level') on their stress levels ('Stress.Level') :angry: :happy: .
 
 ```{r}
-
+ggplot(sleephealth, aes(x = Sleep.Duration, y = Physical.Activity.Level, color = Stress.Level)) +
+  geom_point() +
+  labs(title = "Effect of Physical Activity and Sleep Duration on Stress",
+       x = "Sleep Duration",
+       y = "Physical Activity Level",
+       color = "Stress Level") +
+  theme(plot.title = element_text(size = 10))
 ```
+
+The above scatter plot visualizes the relationship between sleep duration and physical activity level in the 'sleephealth' dataset, with stress levels represented by color. Some interesting findings that were found was that a higher sleep duration and level of physical activity resulted in lower overall stress levels, while higher stress levels were a result of the inverse.
+
 
 ## .
 
