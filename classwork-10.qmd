@@ -128,7 +128,12 @@ ggplot(q2a, aes(x = year, y = pincp, group = fips, color = geoname)) +
        x = "Year",
        y = "Average Personal Income") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  theme(axis.text.x = element_text(
+  angle = -45,
+  hjust = 0,
+  vjust = 1
+))
 ```
 
 This ggplot code creates a line plot to visualize the yearly trend of New York counties' average personal incomes. Each line corresponds to a county, differentiated by color, and the x-axis represents the years. The 'pincp' variable is used for the y-axis, and 'geoname' is used to label the lines with county names. The 'fips' variable is used to group the data by county.

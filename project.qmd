@@ -77,12 +77,56 @@ skim(sleephealth) %>%
   select(-n_missing)
 ```
 
-## Quality of Sleep Under Stress
-The following boxplot shows how the distribution of Quality of Sleep (`Quality.of.Sleep`) varies by a Stress Level (`Stress.Level`) :sleeping: :bed: :angry:.
+## Sleep Duration by Ocupation
+The following boxplot shows the mean sleep duration (`Sleep.Duration`) varies by occupation (`Occupation`) :sleeping: :bed: .
 
+
+```{r}
+mean_sleep_job <- sleephealth %>%
+  group_by(Occupation) %>%
+  summarize(
+    n = n(),
+    sleep_mean = mean(Sleep.Duration, na.rm = TRUE)
+  ) %>%
+  arrange(desc(n))
+mean_sleep_job
+
+ggplot( data = mean_sleep_job, mapping = aes(x = Occupation, y = sleep_mean)) + 
+          geom_bar(stat = "identity") +
+  theme(axis.text.x = element_text(
+  angle = -45,
+  hjust = 0,
+  vjust = 1
+))
+
+```
+
+
+
+
+## .
+
+-
 
 ```{r}
 
 ```
+
+## .
+
+-
+
+```{r}
+
+```
+
+## .
+
+-
+
+```{r}
+
+```
+
 
 

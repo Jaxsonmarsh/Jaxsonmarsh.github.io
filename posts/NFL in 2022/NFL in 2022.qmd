@@ -125,7 +125,12 @@ ggplot(summary_data, aes(x = reorder(posteam, mean_pass), y = mean_pass)) +
   labs(title = "Mean Value of pass for Each posteam",
        x = "Percentage of pass plays",
        y = "Team with posession") +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.text.x = element_text(
+  angle = -45,
+  hjust = 0,
+  vjust = 1
+))
 ```
 
 This scatterplot shows that the mean value of pass for each posteam becomes greater, when the team with posession increases their percentage of passing plays.
