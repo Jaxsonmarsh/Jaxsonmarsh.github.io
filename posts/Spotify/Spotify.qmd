@@ -64,7 +64,7 @@ The following are the variables present in the `spotify` data.frame.
 
 ## Figure 1
 
-Provide a ggplot barchart of the top spotify artists.
+Provide a ggplot barchart of the top 10 spotify artists.
 
 ```{r}
 top_artists <- spotify %>% 

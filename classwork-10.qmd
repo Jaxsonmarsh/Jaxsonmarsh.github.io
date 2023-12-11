@@ -59,7 +59,16 @@ rmarkdown::paged_table(billboard)
 Describe how the distribution of rating varies across week 1, week 2, and week 3 using the faceted histogram.
 
 ```{r}
+install.packages("ggplot2")
+library(ggplot2)
 
+ggplot(billboard, aes(x = wk1)) +
+  geom_histogram(binwidth = 1, fill = "blue", color = "black", alpha = 0.7) +
+  facet_wrap(~year, scales = "free_x", ncol = 3) +
+  labs(title = "Distribution of Ratings Across Weeks 1, 2, and 3",
+       x = "Rating",
+       y = "Frequency") +
+  theme_minimal()
 ```
 
 
@@ -113,8 +122,16 @@ q2a <- ny_pincp %>%
 Provide both (1) ggplot code and (2) a simple comment to describe how overall the yearly trend of NY counties’ average personal incomes are.
 
 ```{r}
-
+ggplot(q2a, aes(x = year, y = pincp, group = fips, color = geoname)) +
+  geom_line() +
+  labs(title = "Yearly Trend of NY Counties' Average Personal Incomes",
+       x = "Year",
+       y = "Average Personal Income") +
+  theme_minimal() +
+  theme(legend.position = "none")
 ```
+
+This ggplot code creates a line plot to visualize the yearly trend of New York counties' average personal incomes. Each line corresponds to a county, differentiated by color, and the x-axis represents the years. The 'pincp' variable is used for the y-axis, and 'geoname' is used to label the lines with county names. The 'fips' variable is used to group the data by county.
 
 
 # COVID-19 Cases
@@ -127,24 +144,24 @@ covid <- read_csv('https://bcdanl.github.io/data/covid19_cases.csv')
 
 ### .
 
--Keep only the following three variables, date, countriesAndTerritories, and cases.
+-Keep only the following three variables, 'date', 'countriesAndTerritories', and 'cases'.
 
 -Then make a wide-form data.frame of covid whose variable names are from countriesAndTerritories and values are from cases.
 
 -Then drop the variable date.
 
 ```{r}
+library(dplyr)
+library(tidyr)
 
-```
+covid_subset <- covid %>%
+  select(date, countriesAndTerritories, cases)
 
-### .
+covid_wide <- covid_subset %>%
+  pivot_wider(names_from = countriesAndTerritories, values_from = cases)
 
--Use the wide-form data.frame of covid to find the top 10 countries in terms of the correlation between their cases and the USA case.
-    -Use cor(data.frame), which returns a matrix.
-    -Then convert it to data.frame using as.data.frame(matrix)
-
-```{r}
-
+covid_final <- covid_wide %>%
+  select(-date)
 ```
 
 
