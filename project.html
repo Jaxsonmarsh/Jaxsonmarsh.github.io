@@ -9,7 +9,6 @@
 <meta name="author" content="Jaxson Marsh">
 <meta name="author" content="Edward Eforo">
 <meta name="author" content="Angelina Batista">
-<meta name="author" content="Daniel Noone">
 <meta name="author" content="Elizabeth Dutan">
 
 <title>Jaxson Marsh - DANL Project</title>
@@ -156,7 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a>
   <ul class="collapse">
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
-  <li><a href="#quality-of-sleep-under-stress" id="toc-quality-of-sleep-under-stress" class="nav-link" data-scroll-target="#quality-of-sleep-under-stress"><span class="header-section-number">2.2</span> Quality of Sleep Under Stress</a></li>
+  <li><a href="#sleep-duration-by-ocupation" id="toc-sleep-duration-by-ocupation" class="nav-link" data-scroll-target="#sleep-duration-by-ocupation"><span class="header-section-number">2.2</span> Sleep Duration by Ocupation</a></li>
+  <li><a href="#effect-of-physical-activity-and-sleep-duration-on-stress" id="toc-effect-of-physical-activity-and-sleep-duration-on-stress" class="nav-link" data-scroll-target="#effect-of-physical-activity-and-sleep-duration-on-stress"><span class="header-section-number">2.3</span> Effect of Physical Activity and Sleep Duration on Stress</a></li>
+  <li><a href="#sleep-duration-and-quality-of-sleep-among-varying-sleep-disorders" id="toc-sleep-duration-and-quality-of-sleep-among-varying-sleep-disorders" class="nav-link" data-scroll-target="#sleep-duration-and-quality-of-sleep-among-varying-sleep-disorders"><span class="header-section-number">2.4</span> Sleep Duration and Quality of Sleep Among Varying Sleep Disorders</a></li>
+  <li><a href="#effect-of-age-and-occupation-on-bmi" id="toc-effect-of-age-and-occupation-on-bmi" class="nav-link" data-scroll-target="#effect-of-age-and-occupation-on-bmi"><span class="header-section-number">2.5</span> Effect of Age and Occupation on BMI</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -180,7 +182,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
              <p>Jaxson Marsh </p>
              <p>Edward Eforo </p>
              <p>Angelina Batista </p>
-             <p>Daniel Noone </p>
              <p>Elizabeth Dutan </p>
           </div>
   </div>
@@ -201,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Data</h1>
-<p>The data.frame <code>sleephealth</code> contains a subset of the fuel economy data that the EPA makes available on <a href="https://fueleconomy.gov/">https://kaggle.com/</a>. It comprises 400 rows and 13 columns, covering a wide range of variables related to sleep and daily habits. It includes details such as gender, age, occupation, sleep duration, quality of sleep, physical activity level, stress levels, BMI category, blood pressure, heart rate, daily steps, and the presence or absence of sleep disorders. <span class="emoji" data-emoji="bed">🛏️</span></p>
+<p>The data.frame <code>sleephealth</code> contains a subset of the fuel economy data that the EPA makes available on <a href="https://fueleconomy.gov/">https://kaggle.com/</a>. It comprises 400 rows and 13 columns, covering a wide range of variables related to sleep and daily habits. It includes variables such as gender, age, occupation, sleep duration, quality of sleep, physical activity level, stress levels, BMI category, blood pressure, heart rate, daily steps, and the presence or absence of sleep disorders. <span class="emoji" data-emoji="bed">🛏️</span></p>
 <section id="summary-statistics" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</h2>
 <div class="cell">
@@ -451,9 +452,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="quality-of-sleep-under-stress" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="quality-of-sleep-under-stress"><span class="header-section-number">2.2</span> Quality of Sleep Under Stress</h2>
-<p>The following boxplot shows how the distribution of Quality of Sleep (<code>Quality.of.Sleep</code>) varies by a Stress Level (<code>Stress.Level</code>) <span class="emoji" data-emoji="sleeping">😴</span> <span class="emoji" data-emoji="bed">🛏️</span> <span class="emoji" data-emoji="angry">😠</span>.</p>
+<section id="sleep-duration-by-ocupation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sleep-duration-by-ocupation"><span class="header-section-number">2.2</span> Sleep Duration by Ocupation</h2>
+<p>The following boxplot shows how the mean sleep duration (<code>Sleep.Duration</code>) varies by occupation (<code>Occupation</code>) <span class="emoji" data-emoji="sleeping">😴</span> <span class="emoji" data-emoji="bed">🛏️</span> .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mean_sleep_job <span class="ot">&lt;-</span> sleephealth <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Occupation) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sleep_mean =</span> <span class="fu">mean</span>(Sleep.Duration, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>mean_sleep_job</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 3
+   Occupation               n sleep_mean
+   &lt;chr&gt;                &lt;int&gt;      &lt;dbl&gt;
+ 1 Nurse                   73       7.06
+ 2 Doctor                  71       6.97
+ 3 Engineer                63       7.99
+ 4 Lawyer                  47       7.41
+ 5 Teacher                 40       6.69
+ 6 Accountant              37       7.11
+ 7 Salesperson             32       6.40
+ 8 Scientist                4       6   
+ 9 Software Engineer        4       6.75
+10 Sales Representative     2       5.9 
+11 Manager                  1       6.9 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="at">data =</span> mean_sleep_job, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Occupation, <span class="at">y =</span> sleep_mean)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">angle =</span> <span class="sc">-</span><span class="dv">45</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">vjust =</span> <span class="dv">1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>The bar graph represents the mean sleep duration amongst all the presented occupations in the ‘sleephealth’ dataset. After putting the data into a ggplot figure, it was found that engineer’s, on average, have the highest mean sleep duration at about 8 hours per night, and sales representative’s had the lowest mean sleep duration at just under 6 hours a night.</p>
+</section>
+<section id="effect-of-physical-activity-and-sleep-duration-on-stress" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="effect-of-physical-activity-and-sleep-duration-on-stress"><span class="header-section-number">2.3</span> Effect of Physical Activity and Sleep Duration on Stress</h2>
+<p>This ggplot shows the effect of someone’s sleep duration (‘Sleep.Duration’) and level of physical activity (‘Physical.Activity.Level’) on their stress levels (‘Stress.Level’) <span class="emoji" data-emoji="angry">😠</span> <span class="emoji" data-emoji="smile">😄</span> .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleephealth, <span class="fu">aes</span>(<span class="at">x =</span> Sleep.Duration, <span class="at">y =</span> Physical.Activity.Level, <span class="at">color =</span> Stress.Level)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Effect of Physical Activity and Sleep Duration on Stress"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sleep Duration"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Physical Activity Level"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Stress Level"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>The above scatter plot visualizes the relationship between sleep duration and physical activity level in the ‘sleephealth’ dataset, with stress levels represented by color. Some interesting findings that were found was that a higher sleep duration and level of physical activity resulted in lower overall stress levels, while higher stress levels were a result of the inverse.</p>
+</section>
+<section id="sleep-duration-and-quality-of-sleep-among-varying-sleep-disorders" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sleep-duration-and-quality-of-sleep-among-varying-sleep-disorders"><span class="header-section-number">2.4</span> Sleep Duration and Quality of Sleep Among Varying Sleep Disorders</h2>
+<p>This ggplot shows the effect of different sleep disorders (‘Sleep.Disorder’) on the subjects’ quality of sleep (‘Quality.of.Sleep’) and overall sleep duration (‘Sleep.Duration’).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleephealth, <span class="fu">aes</span>(<span class="at">x =</span> Sleep.Duration, <span class="at">y =</span> Quality.of.Sleep, <span class="at">color =</span> Quality.of.Sleep)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sleep.Disorder) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scatter Plot of Sleep Duration vs Quality of Sleep"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sleep Duration"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Quality of Sleep"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Quality of Sleep"</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>The scatterplots shown above outlines the ‘Quality.of.Sleep’ and “Sleep.Duration’ by varying ‘Sleep.Disorder’s shown within the ’sleephealth’ dataset. After compliling the ggplot, it was intersting to find that the three scatterplots showed a similar pattern amongst their data points, and that people with no sleep disorder didnt have a quality of sleep below ~6, even if they slept for the minimum number of hours.</p>
+</section>
+<section id="effect-of-age-and-occupation-on-bmi" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="effect-of-age-and-occupation-on-bmi"><span class="header-section-number">2.5</span> Effect of Age and Occupation on BMI</h2>
+<p>The following ggplot represents how BMI (‘BMI.Category’) is different depending on each job (‘Occupation’) and varying ages (‘Age’).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleephealth, <span class="fu">aes</span>(<span class="at">x =</span> BMI.Category, <span class="at">y =</span> Age, <span class="at">fill =</span> Occupation)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heatmap of BMI Category by Age and Occupation"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"BMI Category"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Age"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Occupation"</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>The heatmap shown above represents two variables, ‘Occupation’ and ‘Age’, and their effect on ‘BMI.Category’ within the ‘sleephealth’ data frame. Some interesting things to note from the plot is that, most engineers of all ages were within a normal weight range, and that all the salespersons that were subjected to the data are between the ages of 40-45 years old and also overweight.</p>
 
 
 </section>

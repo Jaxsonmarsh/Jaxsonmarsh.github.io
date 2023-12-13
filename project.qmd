@@ -105,7 +105,7 @@ The bar graph represents the mean sleep duration amongst all the presented occup
 
 ## Effect of Physical Activity and Sleep Duration on Stress
 
-This ggplot shows the effect of someone's sleep duration ('Sleep.Duration') and level of physical activity ('Physical.Activity.Level') on their stress levels ('Stress.Level') :angry: :happy: .
+This ggplot shows the effect of someone's sleep duration ('Sleep.Duration') and level of physical activity ('Physical.Activity.Level') on their stress levels ('Stress.Level') :angry: :smile:  .
 
 ```{r}
 ggplot(sleephealth, aes(x = Sleep.Duration, y = Physical.Activity.Level, color = Stress.Level)) +
@@ -136,15 +136,24 @@ ggplot(sleephealth, aes(x = Sleep.Duration, y = Quality.of.Sleep, color = Qualit
   theme(plot.title = element_text(size = 12))
 ```
 
-The scatterplots shown above outline the 'Quality.of.Sleep' and "Sleep.Duration' by varying 'Sleep.Disorder's shown within the 'sleephealth' dataset. After compliling the ggplot, it was intersting to find that the three scatterplots showed a similar pattern amongst their data points, and that people with no sleep disorder didnt have a quality of sleep below ~6, even if they slept for the minimum number of hours.
+The scatterplots shown above outlines the 'Quality.of.Sleep' and "Sleep.Duration' by varying 'Sleep.Disorder's shown within the 'sleephealth' dataset. After compliling the ggplot, it was intersting to find that the three scatterplots showed a similar pattern amongst their data points, and that people with no sleep disorder didnt have a quality of sleep below ~6, even if they slept for the minimum number of hours.
 
 
-## 
+## Effect of Age and Occupation on BMI
 
+The following ggplot represents how BMI ('BMI.Category') is different depending on each job ('Occupation') and varying ages ('Age'). 
 
 ```{r}
-
+ggplot(sleephealth, aes(x = BMI.Category, y = Age, fill = Occupation)) +
+  geom_tile(color = "white") +
+  scale_fill_brewer(palette = "Set2") +
+  labs(title = "Heatmap of BMI Category by Age and Occupation",
+       x = "BMI Category",
+       y = "Age",
+       fill = "Occupation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
  
-
+The heatmap shown above represents two variables, 'Occupation' and 'Age', and their effect on 'BMI.Category' within the 'sleephealth' data frame. Some interesting things to note from the plot is that, most engineers of all ages were within a normal weight range, and that all the salespersons that were subjected to the data are between the ages of 40-45 years old and also overweight.
