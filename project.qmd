@@ -120,21 +120,31 @@ ggplot(sleephealth, aes(x = Sleep.Duration, y = Physical.Activity.Level, color =
 The above scatter plot visualizes the relationship between sleep duration and physical activity level in the 'sleephealth' dataset, with stress levels represented by color. Some interesting findings that were found was that a higher sleep duration and level of physical activity resulted in lower overall stress levels, while higher stress levels were a result of the inverse.
 
 
-## .
+## Sleep Duration and Quality of Sleep Among Varying Sleep Disorders
 
--
+This ggplot shows the effect of different sleep disorders ('Sleep.Disorder') on the subjects' quality of sleep ('Quality.of.Sleep') and overall sleep duration ('Sleep.Duration').
+
+```{r}
+ggplot(sleephealth, aes(x = Sleep.Duration, y = Quality.of.Sleep, color = Quality.of.Sleep)) +
+  geom_point() +
+  facet_wrap(~ Sleep.Disorder) +
+  labs(title = "Scatter Plot of Sleep Duration vs Quality of Sleep",
+       x = "Sleep Duration",
+       y = "Quality of Sleep",
+       color = "Quality of Sleep") +
+  scale_color_gradient(low = "blue", high = "red") +
+  theme(plot.title = element_text(size = 12))
+```
+
+The scatterplots shown above outline the 'Quality.of.Sleep' and "Sleep.Duration' by varying 'Sleep.Disorder's shown within the 'sleephealth' dataset. After compliling the ggplot, it was intersting to find that the three scatterplots showed a similar pattern amongst their data points, and that people with no sleep disorder didnt have a quality of sleep below ~6, even if they slept for the minimum number of hours.
+
+
+## 
+
 
 ```{r}
 
 ```
 
-## .
-
--
-
-```{r}
-
-```
-
-
+ 
 
