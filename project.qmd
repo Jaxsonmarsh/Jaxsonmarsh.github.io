@@ -45,6 +45,8 @@ theme_set(theme_ipsum()+
 
 
 # Introduction
+For our group project, we decided to pursue an analysis of sleep health using a dataset sourced from “https://kaggle.com/” .The dataset, named sleephealth, contains 400 rows and 13 columns, with multiple different variables related to individuals' sleep patterns and every day lives. We used R and quarto to set up website and and used R  language to analyze, visualize and manipulate the information with in the dataset. Through various statistical summaries and data visualizations we explore patterns and correlations that provide information between sleep health, demographic factors, and lifestyle choices.Workforce productivity is a key driver of economic prosperity and is linked to factors such as sleep duration and quality. The observed variations in sleep patterns across different occupations underscore the potential impact on professional performance and productivity levels. As industries increasingly recognize the importance of employee well-being, insights from this study can inform policies and workplace practices aimed at optimizing sleep health. It also can provide information for employes of their employees general health based on varying factors such as gender and age. The identification of associations between stress levels, physical activity, and sleep duration provides valuable insights for employers seeking to create environments that better provide employee health and economic efficiency in the workplace.
+
 
 The following dataframe was used for this project :sleeping:
 
@@ -157,3 +159,52 @@ ggplot(sleephealth, aes(x = BMI.Category, y = Age, fill = Occupation)) +
 
  
 The heatmap shown above represents two variables, 'Occupation' and 'Age', and their effect on 'BMI.Category' within the 'sleephealth' data frame. Some interesting things to note from the plot is that, most engineers of all ages were within a normal weight range, and that all the salespersons that were subjected to the data are between the ages of 40-45 years old and also overweight.
+
+## Sleep Duration over Quality of Sleep
+
+```{r}
+sleephealth %>%
+  ggplot(aes(x = `Sleep.Duration`, y = `Quality.of.Sleep`, color = Gender)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw() +
+  labs(x = "Sleep Duration", y = "Quality of Sleep")
+
+```
+
+## Relationship Between Heart Rate and Physical Activity Level
+
+```{r}
+sleephealth %>%
+  ggplot(aes(x = `Physical.Activity.Level`, y = `Heart.Rate`, color = `Gender`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Relationship Between Heart Rate and Physical Activity Level", x = "Physical Activity Level", y = "Heart Rate", color = "Gender") +
+  theme_minimal()
+```
+
+## Graph for Gender Vs. Physical.Activity.Level 
+
+The below ggplot shows the distribution between 'Gender' and 'Activity Level' in the 'sleephealth' dataset. 
+
+```{r}
+ggplot(sleephealth,
+       aes(x = Gender, y = Physical.Activity.Level)) +
+  geom_hex() +
+  geom_smooth(color = 'red') +
+  geom_smooth(method = lm) 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
